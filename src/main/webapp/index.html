@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <!-- Sửa action thành "survey" thay vì "emailList" -->
+    <form action="survey" method="post">
+        <input type="hidden" name="action" value="add">
+        <img src="images/murachlogo.jpg" alt="Murach" width="100">
+        <h1>Survey</h1>
+        <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+        
+        <h2>Your information:</h2>
+        <!-- Đổi thứ tự để khớp với lớp User: Email lên đầu -->
+        <label>Email</label>
+        <input type="email" name="email" required><br>
+        <label>First Name</label>
+        <input type="text" name="firstName" required><br>
+        <label>Last Name</label>
+        <input type="text" name="lastName" required><br>
+        
+        <!-- Xóa trường dateOfBirth vì không có trong yêu cầu -->
+
+        <h2>How did you hear about us?</h2>
+        <input type="radio" name="heardFrom" value="Search Engine" checked>Search engine
+        <input type="radio" name="heardFrom" value="Friend">Word of mouth
+        <input type="radio" name="heardFrom" value="Social Media">Social Media
+        <input type="radio" name="heardFrom" value="Other">Other<br>
+
+        <h2>Would you like to receive announcements about new CDs and special offers?</h2>
+        <!-- Sửa thành radio button cho updates -->
+        <input type="radio" name="updates" value="Yes"> YES, I'd like that.<br>
+        <input type="radio" name="updates" value="No" checked> NO, thank you.<br>
+
+        <!-- Chỉ hiển thị phần contact method khi chọn updates = Yes -->
+        <div id="contactMethods" style="display:none;">
+            <p>Please contact me by:
+                <select name="contactVia">
+                    <option value="Email" selected>Email</option>
+                    <option value="Postal Mail">Postal mail</option>
+                    <option value="Both">Email or postal mail</option>
+                </select>
+            </p>
+            
+            <p>
+                <input type="checkbox" name="emailOK"> YES, please send me email announcements.
+            </p>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // JavaScript để ẩn/hiện contact methods dựa trên lựa chọn updates
+        document.querySelectorAll('input[name="updates"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const contactMethods = document.getElementById('contactMethods');
+                contactMethods.style.display = this.value === 'Yes' ? 'block' : 'none';
+                
+                // Đặt required cho contactVia nếu chọn Yes
+                document.querySelector('select[name="contactVia"]').required = this.value === 'Yes';
+            });
+        });
+    </script>
+</body>
+</html>

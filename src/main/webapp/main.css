@@ -1,0 +1,178 @@
+/* ========== GLOBAL ========== */
+body { 
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 2em;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* nền tối huyền ảo */
+    color: #f0f0f0;
+}
+
+/* ========== FORM PAGE ========== */
+.form-container {
+    max-width: 500px;
+    margin: 2em auto;
+    background: rgba(0,0,0,0.45);
+    border-radius: 14px;
+    padding: 2em;
+    box-shadow: 0 0 25px rgba(0,255,255,0.25);
+}
+
+/* Tiêu đề */
+.form-container h1, 
+.form-container h2 {     
+    text-align: center;
+    text-shadow: 0 0 12px rgba(0,255,255,0.6);
+    margin-bottom: 1em;    
+}
+.form-container h1 { font-size: 180%; color: #4df2ff; }
+.form-container h2 { font-size: 140%; color: #90e0ef; }
+
+/* Label + input */
+label {
+    display: inline-block;
+    width: 7em;
+    margin-bottom: 0.6em;
+    font-weight: bold;
+    color: #eee;
+    text-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="date"] {  
+    width: calc(100% - 8em);
+    margin-bottom: 0.6em;
+    padding: 10px 12px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: all 0.3s;
+}
+input:focus {
+    border-color: #00e5ff;
+    outline: none;
+    box-shadow: 0 0 10px #00e5ff;
+    background: rgba(255,255,255,0.15);
+}
+
+/* Table */
+table {
+    border-collapse: collapse;   
+    margin-top: 1.5em;
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0,255,255,0.2);
+}
+th, td {
+    text-align: left;
+    padding: .7em;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+th {
+    background: linear-gradient(90deg, #00e5ff, #0077b6);
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+td {
+    color: #e0f7fa;
+}
+
+/* Nút bấm */
+button, input[type="submit"] {
+    background: linear-gradient(90deg, #06beb6, #48b1bf);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(0,255,255,0.4);
+    transition: all 0.3s ease-in-out;
+}
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #48b1bf, #06beb6);
+    box-shadow: 0 0 20px rgba(0,255,255,0.7);
+    transform: scale(1.05);
+}
+
+/* ========== THANK YOU PAGE ========== */
+.thank-card {
+    max-width: 480px;
+    margin: 3em auto;
+    background: rgba(0,0,0,0.45);
+    border-radius: 14px;
+    padding: 2em;
+    box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Logo */
+.thank-card img {
+    display: block;
+    margin: 0 auto 1em;
+    width: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+/* Tiêu đề */
+.thank-card h1 {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+    color: #4df2ff;
+    text-shadow: 0 0 12px rgba(0,255,255,0.7);
+}
+
+/* Bảng thông tin */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+.info-table td {
+    padding: .6em;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    text-align: left;
+}
+.info-table td:first-child {
+    font-weight: bold;
+    color: #fff;
+    width: 40%;
+}
+
+/* Nút quay lại */
+.thank-card .btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: linear-gradient(90deg, #06beb6, #48b1bf);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(0,255,255,0.4);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+.thank-card .btn:hover {
+    background: linear-gradient(90deg, #48b1bf, #06beb6);
+    box-shadow: 0 0 20px rgba(0,255,255,0.7);
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng mượt */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
